@@ -1,0 +1,40 @@
+{
+    "RECORDS": [
+        {
+            "area": "三亚",
+            "element": "多云",
+            "temperature": "26/31℃",
+            "tourismindex": "适宜"
+        },
+        {
+            "area": "九寨沟",
+            "element": "多云转晴",
+            "temperature": "8/23℃",
+            "tourismindex": "适宜"
+        },
+        {
+            "area": "大理",
+            "element": "晴转多云",
+            "temperature": "9/26℃",
+            "tourismindex": "适宜"
+        },
+        {
+            "area": "张家界",
+            "element": "小雨转晴",
+            "temperature": "10/22℃",
+            "tourismindex": "适宜"
+        },
+        {
+            "area": "桂林",
+            "element": "小雨",
+            "temperature": "11/19℃",
+            "tourismindex": "适宜"
+        },
+        {
+            "area": "青岛",
+            "element": "多云",
+            "temperature": "11/16℃",
+            "tourismindex": "适宜"
+        }
+    ]
+}
