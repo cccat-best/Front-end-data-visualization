@@ -138,11 +138,6 @@
                       height="170"
                     ></canvas>
                   </div>
-                  <!-- <div
-                    id="chart-bars"
-                    class="chart-canvas"
-                    style="height: 270px; width: 100%"
-                  ></div> -->
                 </div>
               </div>
               <div class="card-body">
@@ -171,11 +166,6 @@
                       height="170"
                     ></canvas>
                   </div>
-                  <!-- <div
-                    id="chart-line"
-                    class="chart-canvas"
-                    style="height: 270px; width: 100%"
-                  ></div> -->
                 </div>
               </div>
               <div class="card-body">
@@ -262,8 +252,13 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm">三亚</h6>
+                        <td class="align-middle text-center text-sm addTd">
+                          <h6
+                            class="mb-0 text-sm addTag"
+                            style="background-color: #fc74a4"
+                          >
+                            三亚
+                          </h6>
                         </td>
                         <td class="align-middle text-center text-sm">
                           <div class="avatar-group mt-2">多云</div>
@@ -276,8 +271,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm">九寨沟</h6>
+                        <td class="align-middle text-center text-sm addTd">
+                          <h6
+                            class="mb-0 text-sm addTag"
+                            style="background-color: #c1ebdd"
+                          >
+                            九寨沟
+                          </h6>
                         </td>
                         <td class="align-middle text-center text-sm">
                           <div class="avatar-group mt-2">多云转晴</div>
@@ -290,8 +290,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm">大理</h6>
+                        <td class="align-middle text-center text-sm addTd">
+                          <h6
+                            class="mb-0 text-sm addTag"
+                            style="background-color: #b2def7"
+                          >
+                            大理
+                          </h6>
                         </td>
                         <td class="align-middle text-center text-sm">
                           <div class="avatar-group mt-2">晴转多云</div>
@@ -304,8 +309,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm">张家界</h6>
+                        <td class="align-middle text-center text-sm addTd">
+                          <h6
+                            class="mb-0 text-sm addTag"
+                            style="background-color: #c1ebdd"
+                          >
+                            张家界
+                          </h6>
                         </td>
                         <td class="align-middle text-center text-sm">
                           <div class="avatar-group mt-2">小雨转晴</div>
@@ -318,8 +328,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm">桂林</h6>
+                        <td class="align-middle text-center text-sm addTd">
+                          <h6
+                            class="mb-0 text-sm addTag"
+                            style="background-color: #eeeeee"
+                          >
+                            桂林
+                          </h6>
                         </td>
                         <td class="align-middle text-center text-sm">
                           <div class="avatar-group mt-2">小雨</div>
@@ -332,8 +347,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm">青岛</h6>
+                        <td class="align-middle text-center text-sm addTd">
+                          <h6
+                            class="mb-0 text-sm addTag"
+                            style="background-color: #fc74a4"
+                          >
+                            青岛
+                          </h6>
                         </td>
                         <td class="align-middle text-center text-sm">
                           <div class="avatar-group mt-2">多云</div>
@@ -745,5 +765,16 @@
         },
       });
     </script>
+    <style>
+      .addTd {
+        display: flex;
+        justify-content: center;
+      }
+      .addTag {
+        width: 45%;
+        border-radius: 25px;
+        padding: 3px;
+      }
+    </style>
   </body>
 </html>
