@@ -152,8 +152,29 @@
     </main>
 
     <!--   Core JS Files   -->
+    <script src="../jQuery3.6.js"></script>
     <script src="../assets/js/echarts.js"></script>
     <script type="text/javascript">
+      var name = [];
+      var author = [];
+      var ticket = [];
+      $.ajax({
+        // 是否是异步加载
+        // async: true,
+        // 请求方式 get和post
+        type: "GET",
+        // 请求路径
+        url: "dm.json",
+        // 数据类型
+        // dataType: 'json',
+        // 成功后返回的内容
+        crossDomain: true,
+        success: function (data) {
+          let dmAll = data.RECORDS;
+          console.log(dmAll);
+        },
+      });
+
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(document.getElementById("chart1"));
       // 绘制图表
