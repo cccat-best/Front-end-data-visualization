@@ -124,14 +124,9 @@
     >
       <div class="container-fluid py-4">
         <div class="row" style="height: 83vh">
-          <div class="col-md-7 mt-4">
+          <div class="col-md-7 mt-4" style="width: 100%">
             <div class="card h-100">
               <div id="chart1" class="h-100 chart"></div>
-            </div>
-          </div>
-          <div class="col-md-5 mt-4">
-            <div class="card h-100 mb-4">
-              <div id="chart2" class="h-100 chart"></div>
             </div>
           </div>
         </div>
@@ -155,7 +150,7 @@
     <script src="../jQuery3.6.js"></script>
     <script src="../assets/js/echarts.js"></script>
     <script type="text/javascript">
-      var name = [];
+      var dmName = [];
       var author = [];
       var ticket = [];
       $.ajax({
@@ -171,29 +166,99 @@
         crossDomain: true,
         success: function (data) {
           let dmAll = data.RECORDS;
-          console.log(dmAll);
-        },
-      });
+          // console.log(dmAll);
 
-      // 基于准备好的dom，初始化echarts实例
-      var myChart = echarts.init(document.getElementById("chart1"));
-      // 绘制图表
-      myChart.setOption({
-        title: {
-          text: "ECharts 入门示例",
+          for (let i = 0; i < dmAll.length; ++i) {
+            dmName.push(dmAll[i].name);
+            author.push(dmAll[i].author);
+            ticket.push(dmAll[i].ticket * 1);
+          }
+          // console.log(dmName);
+          // console.log(author);
+          // console.log(ticket);
+
+          // 基于准备好的dom，初始化echarts实例
+          var myChart = echarts.init(document.getElementById("chart1"));
+          // 绘制图表
+          myChart.setOption({
+            title: {
+              text: "月票排行榜",
+            },
+            tooltip: {},
+            xAxis: {
+              data: dmName,
+              nameTextStyle: {
+                fontSize: 20,
+                width: 20,
+              },
+              axisLabel: {
+                interval: 0,
+                rotate: 30,
+              },
+            },
+            yAxis: {},
+            series: [
+              {
+                name: "月票数",
+                type: "bar",
+                data: ticket,
+                barWidth: "50%",
+                itemStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                    { offset: 0, color: "#0b9eff" },
+                    { offset: 1, color: "#63caff" },
+                  ]),
+                },
+              },
+              {
+                // 柱顶
+                name: "月票数",
+                type: "pictorialBar",
+                barWidth: 20,
+                symbol: "diamond",
+                symbolPosition: "end",
+                symbolOffset: [0, "-50%"],
+                symbolSize: [30, 12],
+                zlevel: 2,
+                itemStyle: { color: "#0b9eff" },
+                data: ticket,
+              },
+              {
+                // 柱底
+                name: "月票数",
+                type: "pictorialBar",
+                barWidth: 20,
+                symbol: "diamond",
+                symbolOffset: [0, "50%"],
+                symbolSize: [30, 15],
+                itemStyle: { color: "#63caff" },
+              },
+              {
+                // 框柱体
+                name: "月票数",
+                type: "bar",
+                barWidth: 30,
+                barGap: "-100%",
+                zlevel: -1,
+                itemStyle: { color: "#DCE4E6" },
+                // data: ticket,
+              },
+              {
+                // 框柱顶
+
+                type: "pictorialBar",
+                barWidth: 20,
+                symbol: "diamond",
+                symbolPosition: "end",
+                symbolOffset: [0, "-50%"],
+                symbolSize: [30, 12],
+                zlevel: -1,
+                itemStyle: { color: "#DCE4E6" },
+                data: ticket,
+              },
+            ],
+          });
         },
-        tooltip: {},
-        xAxis: {
-          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
-        },
-        yAxis: {},
-        series: [
-          {
-            name: "销量",
-            type: "bar",
-            data: [5, 20, 36, 10, 10, 20],
-          },
-        ],
       });
     </script>
   </body>

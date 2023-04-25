@@ -432,19 +432,19 @@
         crossDomain: true,
         success: function (data) {
           let weatherAll = data.RECORDS;
-          console.log(weatherAll);
+          // console.log(weatherAll);
 
           for (let i = 0; i < weatherAll.length; ++i) {
             let dataTem = splitTem(weatherAll[i].temperature);
-            area[i] = weatherAll[i].area;
-            lowTem[i] = dataTem[0] * 1;
-            hightTem[i] = dataTem[1] * 1;
-            differTem[i] = dataTem[1] - dataTem[0];
+            area.push(weatherAll[i].area);
+            lowTem.push(dataTem[0] * 1);
+            hightTem.push(dataTem[1] * 1);
+            differTem.push(dataTem[1] - dataTem[0]);
           }
-          console.log(area);
-          console.log(lowTem);
-          console.log(hightTem);
-          console.log(differTem);
+          // console.log(area);
+          // console.log(lowTem);
+          // console.log(hightTem);
+          // console.log(differTem);
 
           var myChart = echarts.init(document.getElementById("lastChart"));
           // 绘制图表
